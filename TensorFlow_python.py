@@ -22,6 +22,6 @@ for i in range(8,25,5): #i=8, 13, 18,23 (start stop stop)
     #1
     
     #Integer division which rounds off result to the next integer
-    print(7%2)
+    print(7//2)
     #3
     
