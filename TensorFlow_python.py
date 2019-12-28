@@ -224,6 +224,42 @@ elif (is_Designer) and not(is_Developer):
     print("Welcome UI/Ux Engineer")
 else:
     print("You are not a developer")
-
-
     
+# FUNCTIONS AND COMPARISONS
+# Function to return largest among three integers
+
+
+def max_num(num1, num2, num3):
+    if(num1 >= num2) and (num1 >= num3):
+        return num1
+    elif(num2 >= num1) and(num2 >= num3):
+        return num2
+    else:
+        return num3
+
+
+print(max_num(12, 30, 57))
+
+def compare_strings(name, school, town):
+    if(name == "Owen") and (school == "Kabarak") and (town == "Nakuru"):
+        return True
+    else:
+        return False
+
+
+print(compare_strings("Owen", "Kabarak", "Nakuru"))
+
+# Using not operator !
+
+
+def compare_strings(name, school, town):
+    if(name != "Owen") and (school != "Kabarak") and (town != "Nakuru"):
+        return True
+    else:
+        return False
+
+
+print(compare_strings("Owen", "UOE", "Nakuru"))
+
+# simplified Scientific Calculator combined operations        
+   
