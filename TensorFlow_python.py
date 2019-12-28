@@ -141,5 +141,48 @@ print(lucky_numbers)
 print(friends2)
 
 # UP NEXT IS TUPLES
+# TUPLES (containers for storing different types of data )
+# Tuples can not be changed
+coordinates = (2, 5)
+print([1])  # prints tuples at index 1
+print(coordinates)  # prints all the coordinates
+coordinates2 = [(20, 1), (12, 8), (2, 5), (89, 100)]  # List of coordinates
+print(coordinates2)  # prints all the listed coordinates
+
+
+# Functions - Collections of code which performs a collection of task
+def greeting_function():  # format for creating a function
+    print("Hello Developer !")    # Give the instructions to the function
+
+
+greeting_function()  # calling the function to execute the instructions
+
+
+def function_parameter(name, age):
+    print("Hello " + name + " Your age is " + str(age))
+
+
+function_parameter("Owen", 32)
+function_parameter("Timz ", 42)
+
+# RETURN STATEMENTS  - returns a value to the function caller
+
+
+def square(num):
+    return num * num  # returns the square if a number
+
+
+print("answer is " + str(square(10)))
+
+
+def cube(num):
+    return num * num * num  # returns the square if a number
+
+
+answer = cube(3)  # introduced a variable name to store the value of function
+print(answer)
+
+# UP NEXT CONTROL STATEMENTS (IF STATEMENTS)
+
 
     
