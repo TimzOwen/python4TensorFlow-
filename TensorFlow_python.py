@@ -261,5 +261,19 @@ def compare_strings(name, school, town):
 
 print(compare_strings("Owen", "UOE", "Nakuru"))
 
-# simplified Scientific Calculator combined operations        
+# simplified Scientific Calculator combined operations
+num1 = float(input("Enter Num 1: "))
+operator = input("Enter operator: ")
+num2 = float(input("Enter num 2: "))
+
+if(operator == "+"):
+    print(num1 + num2)
+elif(operator == "/"):
+    print(num1 / num2)
+elif(operator == "-"):
+    print(num1 - num2)
+elif(operator == "*"):
+    print(num1 * num2)
+else:
+    print("Enter correct operand")
    
