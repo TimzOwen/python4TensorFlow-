@@ -183,6 +183,47 @@ answer = cube(3)  # introduced a variable name to store the value of function
 print(answer)
 
 # UP NEXT CONTROL STATEMENTS (IF STATEMENTS)
+# If statements are used to make decision in a program
+
+is_Developer = True
+if is_Developer:
+    print("Hello Developer")  # prints because the boolean is true
+
+is_Developer = False
+if is_Developer:
+    print("Hello Developer")  # doesn't print because its false and not true
+
+is_Developer = False
+if is_Developer:
+    print("Hello Developer")  # prints because the boolean is true
+else:
+    print("you are not a developer")  # prints this if the if is false
+
+is_Developer = False
+is_Designer = False
+if is_Developer or is_Designer:  # Returns if either if the boolean is true
+    print("Hello FullStack Developer or intermediate")  # prints because the boolean is true
+else:  # returns this if all the booleans are false
+    print("Hell Newbie")
+
+is_Developer = True
+is_Designer = True
+if is_Developer and is_Designer:  # Returns true  if either if all the booleans are true
+    print("Hello FullStack Developer")  # prints because the boolean is true
+else:  # returns this if all the booleans are false
+    print("You are not a developer")
+
+# Using ElIF to draw more than two comparison
+is_Developer = True
+is_Designer = False
+if is_Developer and is_Designer:  # Returns if either if the boolean is true
+    print("Hello Full Stack Engineer !")
+elif is_Developer and not(is_Designer):
+    print("You are Back-End Engineer")
+elif (is_Designer) and not(is_Developer):
+    print("Welcome UI/Ux Engineer")
+else:
+    print("You are not a developer")
 
 
     
