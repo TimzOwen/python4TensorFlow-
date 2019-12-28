@@ -321,9 +321,18 @@ print("Done Looping :")
 # Build a Random Picker Game
 secretCode = "Python"
 Guess = ""
-while Guess != "Python":
-    Guess = input("Enter Your Guess")
-print("You Got it !!!")
-
+Guess_Count = 0
+Guess_Limit = 3
+out_of_Guess = False
+while Guess != "Python" and not(out_of_Guess):
+    if Guess_Count < Guess_Limit:
+        Guess = input("Enter Your Guess")
+        Guess_Count += 1
+    else:
+        out_of_Guess = True
+if out_of_Guess:
+    print("Out of Guess, You Lose")
+else:
+    print(secretCode +  " You win !!")
 
    
