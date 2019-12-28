@@ -276,4 +276,54 @@ elif(operator == "*"):
     print(num1 * num2)
 else:
     print("Enter correct operand")
+    
+ 
+# Dictionaries -  Used to store paired values
+# Uses Key and assigned Values
+
+weeklyDictionary = {
+    "Mon": "Monday",
+    "Tue": "Tuesday",
+    "Wed": "Wednesday",
+    "Thur": 'Thursday',
+    "Fri": "Friday",
+    "Sat": "Saturday",
+    "Sun": "Sunday"
+}
+print(weeklyDictionary["Sun"])  # Returns error if key not found
+print(weeklyDictionary.get("Wedd"))  # returns no if key not found
+print(weeklyDictionary.get("Mooon", "Key not found"))  # return default instead of non
+
+# Using Integers in dictionaries
+numbersDictionary = {
+    0: "False",
+    1: "True",
+    2: "Two",
+    3: 'Three',
+    4: "Four",
+    5: "Five",
+    6: "Six",
+    7: "Seven",
+    8: "Eight",
+    9: "Nine",
+    10: "Ten"
+}
+print(numbersDictionary.get(1))  # Returns error if key not found
+
+# WHILE LOOP
+i = 1
+while i <= 10:
+    print(i)
+    i += 1  # or i = i +1
+print("Done Looping :")
+
+
+# Build a Random Picker Game
+secretCode = "Python"
+Guess = ""
+while Guess != "Python":
+    Guess = input("Enter Your Guess")
+print("You Got it !!!")
+
+
    
