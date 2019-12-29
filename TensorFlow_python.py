@@ -334,5 +334,51 @@ if out_of_Guess:
     print("Out of Guess, You Lose")
 else:
     print(secretCode +  " You win !!")
+    
+ 
+# for Loop
 
-   
+for letter in "Computer Science":
+    print(letter)
+
+Laptops = ["Toshiba", "Hp", "Lenovo", "SamSung"]
+for specs in Laptops:
+    print(specs)
+
+# print numbers between 0 and 5 but not 5
+for numbers in range(5):
+    print(numbers)
+
+for index in range(5, 15):
+    print(index)
+
+# print elements in array using for loop
+friends = ["Owen", "Timz", "Chelsea", "Linda", "Daktari"]
+for total in range(len(friends)):
+    print(friends[total])
+
+# Combined if anf for loop logic
+for i in range(5):
+    if i == 0:
+        print("Iteration 001")
+    else:
+        print("Lop not iteration 001")
+
+# EXPONENTIAL FUNCTIONS
+# prints 2 exponential 3
+print(2 ** 3)
+
+# exponential using functions
+
+
+def exponential_function(base_No, pow_No):
+    result = 1
+    for index in range(pow_No):
+        result = result * base_No
+    return result
+
+
+print(exponential_function(3, 3))
+
+    
+    
