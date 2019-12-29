@@ -381,4 +381,75 @@ def exponential_function(base_No, pow_No):
 print(exponential_function(3, 3))
 
     
+# 2D LISTS AND NESTED LOOPS
+# Normal list
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 8, 9]
+print(numbers)
+print(numbers[2])
+
+# 2D List
+numbers = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print(numbers)
+# print 1 which is row 1 indexed 0 and column 1 indexed 0
+print(numbers[0][0])
+print(numbers[1][1])
+
+# NESTED LOOPS
+numbers = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [0]
+]
+for row in numbers:
+    print(row)
+
+numbers = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [0]
+]
+for row in numbers:
+    for col in row:
+        print(col)
+
+# BUILDING A WORD LANGUAGE TRANSLATOR
+
+
+def translator(words):
+    final_translation = ""
+    for letters in words:
+        if letters in "AEIOUaeiou":
+            final_translation = final_translation + "g"
+        else:
+            final_translation = final_translation + letters
+    return final_translation
+
+
+print(translator(input("Enter your word to convert")))
+
+
+def translator_lowercase(phrase):
+    translation = ""
+    for letter in phrase:
+        if letter.lower() in "aeiou":
+            # translation = translation + "g"
+            if letter.isupper():
+                translation = translation + "G"
+            else:
+                translation = translation + "g"
+        else:
+            translation = translation + letter
+    return translation
+
+
+print(translator_lowercase(input("Enter your phrase: ")))
+
+
+# UP NEXT TRY CATCH / EXCEPT ERRORS 
     
