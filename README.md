@@ -1,2 +1,2 @@
-# python4TensorFlow-
-Python basics to get started with TensorFlow for deep Learning in machine Learning 
+# python4TensorFlow and Machine Learning
+Python from zero to Hero to get you started with  machine Learning and Data science
