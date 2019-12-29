@@ -451,5 +451,53 @@ def translator_lowercase(phrase):
 print(translator_lowercase(input("Enter your phrase: ")))
 
 
+
 # UP NEXT TRY CATCH / EXCEPT ERRORS 
+
+# Gets user input and prints numbers only and error when string entered
+number = int(input(" Enter a number: "))
+print(number)
+
+# using try except to catch the error
+try:
+    number = int(input("Enter a number : "))
+    print(number)
+except:
+    print("Not a number, enter correct input")
+
+# Catching exact error
+try:
+    divisionByZeroError = 50/0
+    number = int(input("Enter a number : "))
+    print(number)
+except ZeroDivisionError:
+    print("Did you just divide a number by Zero!!! you Mad")
+
+# Catching the String error
+try:
+    number = int(input("Enter a number : "))
+    print(number)
+except ValueError:
+    print("invalid input, not a number")
+
+# Catching multiple errors
+# run commenting  out each situation and see the difference
+try:
+    division = 45/0
+    number = int(input("Enter a number : "))
+    print(number)
+except ZeroDivisionError:
+    print("We do'nt divide numbers by Zeros")
+except ValueError:
+    print("Invalid input")
+
+# Printing specific errors
+try:
+    total = 21/0
+    number = int(input("Enter a number : "))
+    print(number)
+except ZeroDivisionError as err:
+    print(err)
     
+
+# UP NEXT IS READING SPECIFIC FILES
