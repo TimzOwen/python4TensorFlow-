@@ -548,3 +548,24 @@ for students in students_file.readlines():
 
 
 # UP NEXT IS WRITING FILES 
+# adding a new daa to the file using append
+students_file = open("students.txt", "a")
+students_file.write("\nKelvin - Jumia")
+students_file.close()
+
+# overwriting a file to place complete new data using write "w"
+students_file = open("students.txt", "w")
+students_file.write("\nKelvin - Jumia")
+students_file.close()
+
+# create new file using write
+students_file = open("students002.txt", "a")
+students_file.write("\nKelvin - Jumia")
+students_file.close()
+
+# create a html file using python file write
+students_file = open("html_sample.html", "w")
+students_file.write("<p> This is html in python </p>")
+students_file.close()
+
+# UP NEXT IS MODULES AND PIP
