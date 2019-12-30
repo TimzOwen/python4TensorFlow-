@@ -501,3 +501,50 @@ except ZeroDivisionError as err:
     
 
 # UP NEXT IS READING SPECIFIC FILES
+# UP NEXT IS READING SPECIFIC FILES
+
+open("#Filename.txt", "#How you want to open it")
+open("employees.txt", "r")  # read mode
+open("kabarakstudents.txt", "w")  # write mode
+open("dsckabarak.txt", "a")  # append mode(adding new item at the end)
+open("studentsPortal.txt", "r+")  # read and write mode
+
+# opening , closing and assigning variable to store the file and check if readable
+students_file = open("students.txt", "r")
+print(students_file.readable())
+students_file.close()
+
+# check if file is writeable by changing w/r mode
+students_file = open("students.txt", "w")
+print(students_file.writable())
+students_file.close()
+
+# read information in a file. make sure to check r/w mode otherwise won't read
+students_file = open("students.txt", "r")
+print(students_file.read())
+students_file.close()
+
+# Reading individual lines after another
+students_file = open("students.txt", "r")
+print(students_file.readline())
+print(students_file.readline())
+students_file.close()
+
+# Read all files at once in an array way
+students_file = open("students.txt", "r")
+print(students_file.readlines())
+students_file.close()
+
+# Read an exact index item in a data file
+students_file = open("students.txt", "r")
+print(students_file.readlines()[1])
+students_file.close()
+
+# Read all data using a for loop
+students_file = open("students.txt", "r")
+for students in students_file.readlines():
+    print(students)
+    students_file.close()
+
+
+# UP NEXT IS WRITING FILES 
