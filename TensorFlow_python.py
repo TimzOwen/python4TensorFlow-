@@ -568,4 +568,32 @@ students_file = open("html_sample.html", "w")
 students_file.write("<p> This is html in python </p>")
 students_file.close()
 
+
 # UP NEXT IS MODULES AND PIP
+
+# modules are files that can be imported into the file
+# All with functions, variables and all python files"
+
+# use file named useful_pytools.py to test this or create your own file
+# make sure to import the file too
+import useful_pytools
+
+print(useful_pytools.roll_dice(9))  # rolls 9 sided dice as per the usefultools function file
+
+# UP NEXT PIP
+# This is a package manager used to install external 3rd party libraries
+# example
+# pip install python-docx  (used for editing word docs )
+# can be installed using terminal for mac/Linux users and cmd for windows devs
+# external libraries are found in the directory --> /External/Lib/ in pycharm
+# when you install third-party module, its found in /External/Lib/site-packages
+# you can uninstall a package by using your terminal/cmd
+# example
+# pip uninstall python-docx
+
+
+# UP NEXT ON CLASSES AND OBJECTS
+
+
+
+
