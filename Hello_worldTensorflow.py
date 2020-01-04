@@ -2,14 +2,10 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-# Simple hello world using TensorFlow
-
-# Create a Constant op
-# The op is added as a node to the default graph.
-#
-# The value returned by the constructor represents the output
-# of the Constant op.
-hello = tf.constant('Hello, TensorFlow!')
+#Create op ,
+#start session 
+#print the op in the String format 
+hello = tf.constant('Hello World, TensorFlow! Here')
 
 # Start tf session
 sess = tf.Session()
