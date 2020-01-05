@@ -1,3 +1,8 @@
+# create the class Laptops and try it out first
+# Create another class Microprocessor and try it out.
+# combine both when you comfortable with objects and classes
+
+
 class Laptops:
     def __init__(self, made, processor, ram, storage):
         self.made_type = made
