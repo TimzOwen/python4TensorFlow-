@@ -566,6 +566,62 @@ print(useful_pytools.roll_dice(9))  # rolls 9 sided dice as per the usefultools 
 
 
 # UP NEXT ON CLASSES AND OBJECTS
+# classes(define your own Strings and properties) and objects represent real world objects simulators
+# Example - modeling a student class
+# import and create the student object
+
+from Student import Students
+from Student import Cars
+from Laptops import Laptops
+from Laptops import Microprocessor
+
+student1 = Students("Owen", "ICT", 9.2, False)
+student2 = Students("Timz", "software", 10.2, True)
+print(student1.name)
+print(student1.gpa)
+print(student1.major)
+print(student1.is_on_probation)
+
+print(student2.name)
+print(student2.major)
+print(student2.is_on_probation)
+print(student2.gpa)
+
+car_model1 = Cars("BMW", "4500", 2500000, "300km/hr")
+car_model2 = Cars("Range Rover", "5000", 5000000, "400km/hr")
+car_model3 = Cars("Subaru", 3000, 2560000, "320km/hr")
+print(car_model1.high_speed)
+print(car_model1.approximate_price)
+print(car_model1.made_model)
+
+print(car_model2.made_model)
+print(car_model2.horse_power)
+print(car_model2.high_speed)
+print(car_model2.approximate_price)
+
+print(car_model3.made_model)
+print(car_model3.approximate_price)
+print(car_model3.high_speed)
+
+LaptopA = Laptops("Toshiba", 2.86, "8GB", "320HDD GB")
+LaptopB = Laptops("MacBook Pro", 4.0, "16GB", "500GB SSD", )
+LaptopC = Laptops("Lenovo x1 Carbon", 3.85, "32GB", "256 SSD")
+
+print(LaptopA.made_type)
+print(LaptopB.made_type)
+print(LaptopC.made_type)
+
+print(LaptopC.processor_speed)
+print(LaptopA.storage_size)
+print(LaptopB.made_type)
+
+microprocessor1 = Microprocessor("Intel", "3.5", "7th Generation")
+microprocessor2 = Microprocessor("Toshiba", "2.86", "5th Generation")
+microprocessor3 = Microprocessor("Cisco", "4.0", "3rd Generation")
+
+print(microprocessor1.generation)
+print(microprocessor2.processor_speed)
+print(microprocessor3.company_made)
 
 
 
