@@ -624,5 +624,53 @@ print(microprocessor2.processor_speed)
 print(microprocessor3.company_made)
 
 
+# UP NEXT IS MULTIPLE CHOICE GAME PLAYER
+# Create an array of the questions and answers
+# import the questions class
+
+from Question import Question
+
+questions_prompt = [
+    "What is the Leading baking company? \n (a) Kcb \n (b) Equity \n (c) Transnational ",
+    "Who owns Google \n (a) Mark Zakurbug \n (b) Sundar Puchai \n (c) james Bond  ",
+    "Which is the fastest hard disk? \n (a) RAM \n (b) HDD \n (c) SSD "
+]
+
+questions = [
+    Question(questions_prompt[0], "a"),
+    Question(questions_prompt[1], "b"),
+    Question(questions_prompt[2], "c"),
+]
+
+
+def run_test_question(questions):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt_user)
+        if answer == question.choose_answer:
+            score += 1
+    print("You got " + str(score) + "/" + str(len(questions)) + " Correct")
+
+
+run_test_question(questions)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
