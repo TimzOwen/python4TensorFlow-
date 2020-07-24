@@ -405,3 +405,42 @@ print(fractional_part(5, 3)) # Should be 0.66...
 print(fractional_part(5, 2)) # Should be 0.5
 print(fractional_part(5, 0)) # Should be 0
 print(fractional_part(0, 5)) # Should be 0
+ 
+ 
+ 
+# 29:
+#write a loop that will execute x 10 times and print the 11th result at the end
+x=0
+while(x<10):
+    print("Still way to go x: =" + str(x))
+    x=x+1
+print("finally x: = " + str(x))
+
+# 30:
+# write a code using any variable to check the number of attempt a person inputs in [password] attempts
+# rem to use function and good varible names
+def password(attempts):
+    x = 1
+    while(x<attempts):
+        print("Attempt number  : " + str(x))
+        x+=1
+    print("Please contact admin: attempts: " + str(x))
+password(6)
+
+# Using while loop calculate the sum f numbers between 0 and 9
+x = 1
+sum = 0
+while x<10:
+    sum += x
+    x+=1
+print(sum)
+
+# 31
+#Fix the problrm caused by invalid answers below
+def count_down(start_number):
+  while (current > 0):
+    print(current)
+    current -= 1
+  print("Zero!")
+count_down(3)
+
