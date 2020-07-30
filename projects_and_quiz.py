@@ -516,3 +516,170 @@ print(is_power_of_two(1)) # Should be True
 print(is_power_of_two(8)) # Should be True
 print(is_power_of_two(9)) # Should be False
 
+ 
+ 
+#37;
+#Fcomplete the empty function so that it returns the sum of all the divisors of a number, without including it. 
+# A divisor is a number that divides into another without a remainder
+def sum_divisors(n):
+      sum = 0
+  # Return the sum of all divisors of n, not including n
+  return sum
+
+print(sum_divisors(0))
+# 0
+print(sum_divisors(3)) # Should sum of 1
+# 1
+print(sum_divisors(36)) # Should sum of 1+2+3+4+6+9+12+18
+# 55
+print(sum_divisors(102)) # Should be sum of 2+3+6+17+34+51
+# 114
+
+
+#Answer
+def sum_divisors(n):
+      x=1
+  sum = 0
+  if n==0:
+    sum +=n
+  else:
+    while n > x:
+      while n%x==0 and n!=x:
+        sum +=x
+        x+=1
+      x+=1
+  # Return the sum of all divisors of n, not including n
+  return sum
+
+print(sum_divisors(0))
+# 0
+print(sum_divisors(3)) # Should sum of 1
+# 1
+print(sum_divisors(36)) # Should sum of 1+2+3+4+6+9+12+18
+# 55
+print(sum_divisors(102)) # Should be sum of 2+3+6+17+34+51
+# 114
+
+
+#38 
+#he multiplication_table function prints the results of a number passed to
+#  it multiplied by 1 through 5. An additional requirement 
+# is that the result is not to exceed 25, which is done with the break
+#  statement. Fill in the blanks to complete the function to satisfy these conditions.
+
+def multiplication_table(number):
+	# Initialize the starting point of the multiplication table
+	multiplier = 1
+	# Only want to loop through 5
+	while multiplier <= 5:
+		result = ___ 
+		# What is the additional condition to exit out of the loop?
+		if ___ :
+			break
+		print(str(number) + "x" + str(multiplier) + "=" + str(result))
+		# Increment the variable for the loop
+		___ += 1
+
+multiplication_table(3) 
+# Should print: 3x1=3 3x2=6 3x3=9 3x4=12 3x5=15
+
+multiplication_table(5) 
+# Should print: 5x1=5 5x2=10 5x3=15 5x4=20 5x5=25
+
+multiplication_table(8)	
+# Should print: 8x1=8 8x2=16 8x3=24
+
+#Answer
+def multiplication_table(number):
+    	# Initialize the starting point of the multiplication table
+	multiplier = 1
+	# Only want to loop through 5
+	while multiplier <= 5:
+		result = multiplier * number
+		# What is the additional condition to exit out of the loop?
+		if result>25 :
+			break
+		print(str(number) + "x" + str(multiplier) + "=" + str(result))
+		# Increment the variable for the loop
+		multiplier += 1
+
+multiplication_table(3) 
+# Should print: 3x1=3 3x2=6 3x3=9 3x4=12 3x5=15
+
+multiplication_table(5) 
+# Should print: 5x1=5 5x2=10 5x3=15 5x4=20 5x5=25
+
+multiplication_table(8)	
+# Should print: 8x1=8 8x2=16 8x3=24
+
+
+
+# 39 complete the code to find sum_squares
+# function, so that it returns the sum of all the squares of
+#  numbers between 0 and x (not included). Remember that you can
+# use the range(x) function to generate a sequence of numbers from 0 to x (not included).
+def square(n):
+    return n*n
+
+def sum_squares(x):
+    sum = 0
+    for n in ___:
+        sum += __
+    return __
+
+print(sum_squares(10)) # Should be 285
+
+#anws:
+def square(n):
+    return n*n
+def sum_squares(x):
+    sum = 0
+    for n in range(x):
+        sum += square(n)
+    return sum
+print(sum_squares(10))
+
+#40
+#Iterate through a for loop in a list and print all your friends not less than 10 of them
+friends = ['Timz', 'Owen','Chelsea','Cherono','Shem','Kiptoo','Linda','Daktari','Sean','Joy']
+for team in friends:
+      print("Hello Awesome :"  + team)
+      
+
+# 41:
+#calculate sum of values and their length using for loop and calculate the sum and avarage:
+values = [0,10,20,30,40,50,60,70,80,90,100]
+sum = 0
+length = 0
+for value in values:
+  sum += value
+  length += 1
+print("The sum is: " + str(sum) + " Avareg: " + (sum/length))
+
+# 42
+#calculate the factorial of a number using function:
+def factorial(n):
+    result = 1
+    for i in range(1,(n+1)):
+        result = i * result
+    return result
+print(factorial(4)) # should return 24
+print(factorial(5)) # should return 120
+
+#or
+def factorial(n):
+    result = 1
+    for x in range(result,(n+1)):
+        result *= x
+    return result
+print(factorial(4)) #34
+
+#43
+# Using function and for loop ,create a temperature to celcius converstion that will
+# convert starting at 0, end at 100 and interval of 10:
+def to_celsius(x):
+    return (x-32)*5/9
+for x in range(0,101,10):
+    print("Temp at :" + str(x) + " is: " + str(to_celsius(x)))
+ 
+ 
