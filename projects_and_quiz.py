@@ -683,26 +683,3 @@ for x in range(0,101,10):
     print("Temp at :" + str(x) + " is: " + str(to_celsius(x)))
  
  
-#44
-#create a team match for football using nested for loop.make sure there is no team that is playing
-#againest itself and print the score board for the Coach;
-teams = ['Chelsea', 'Arsenal','Man city', 'Man U','AFC Leopard', 'Barcelona','Liverpool']
-
-for home_team in teams:
-  for away_team in teams:
-    if(home_team!=away_team):
-      print("[ " + home_team + " VS " + away_team +" ]")
-
-# 45
-# using the block 7 spinner game,use for loop to interate each block and make sure  no repetition
-for left in range(7):
-    for right in range(left,7):
-        print("[" + str(left) + "|" + str(right) + "]",end="")
-    print()
-[0|0][0|1][0|2][0|3][0|4][0|5][0|6]
-[1|1][1|2][1|3][1|4][1|5][1|6]
-[2|2][2|3][2|4][2|5][2|6]
-[3|3][3|4][3|5][3|6]
-[4|4][4|5][4|6]
-[5|5][5|6]
-[6|6]
