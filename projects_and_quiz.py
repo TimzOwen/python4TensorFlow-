@@ -683,3 +683,88 @@ for x in range(0,101,10):
     print("Temp at :" + str(x) + " is: " + str(to_celsius(x)))
  
  
+#44
+#create a team match for football using nested for loop.make sure there is no team that is playing
+#againest itself and print the score board for the Coach;
+teams = ['Chelsea', 'Arsenal','Man city', 'Man U','AFC Leopard', 'Barcelona','Liverpool']
+
+for home_team in teams:
+  for away_team in teams:
+    if(home_team!=away_team):
+      print("[ " + home_team + " VS " + away_team +" ]")
+
+# 45
+# using the block 7 spinner game,use for loop to interate each block and make sure  no repetition
+for left in range(7):
+    for right in range(left,7):
+        print("[" + str(left) + "|" + str(right) + "]",end="")
+    print()
+[0|0][0|1][0|2][0|3][0|4][0|5][0|6]
+[1|1][1|2][1|3][1|4][1|5][1|6]
+[2|2][2|3][2|4][2|5][2|6]
+[3|3][3|4][3|5][3|6]
+[4|4][4|5][4|6]
+[5|5][5|6]
+[6|6]
+
+# 46
+#Debug and Fix the code to iterate for only one worddef validate_users(users):
+for user in users:
+    if is_valid(user):
+      print(user + " is valid")
+    else:
+      print(user + " is invalid")
+validate_users("purplecat")
+
+#solved
+def validate_users(users):
+      for user in users:
+        if len(user)>3:
+          print(user + " is valid")
+      else:
+       print(user + " is invalid")
+validate_users(["purplecat"])
+
+
+# 47
+#create a  factorial function that returns the factorial of n.
+#  Then, print the first 10 factorials (from 0 to 9) with the corresponding number. 
+# Remember that the factorial of a number is defined as the product of an integer 
+# and all integers before it. For example, the factorial 
+# of five (5!) is equal to 1*2*3*4*5=120. Also recall that the factorial of zero (0!) is equal to 1.
+def factorial(n):
+    result = 1
+    for x in range(1,n+1):
+        result *= x
+    return result
+for n in range(0,10):
+    print(n, factorial(n))
+
+# 48
+# Write a script that prints the first 10 cube numbers (x**3), starting with x=1 and ending with x=10.
+for square in range(1,11):
+      squared = square **3
+      print(squared)
+
+# 49
+# Write a script that prints the multiples of 7 between 0 and 100. Print one multiple per line and avoid printing any 
+# numbers that aren't multiples of 7. Remember that 0 is also a multiple of 7.
+for multiple in range(0,100,7):
+    print(multiple, end = " \n")
+
+# 50
+# The retry function tries to execute an operation that might fail, it retries the operation for a number of attempts. Currently
+# the code will keep executing the function even if it succeeds. Fill in the blank so the code stops trying after the operation succeeded.
+def retry(operation, attempts):
+      for n in range(attempts):
+       if operation():
+        print("Attempt " + str(n) + " succeeded")
+        break
+      else:
+        print("Attempt " + str(n) + " failed")
+retry(create_user, 3)
+retry(stop_service, 5)
+
+# 51
+# Using recursion create a function that calls itself using a factorial sample
+
