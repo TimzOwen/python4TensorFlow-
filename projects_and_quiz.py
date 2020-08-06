@@ -1021,26 +1021,75 @@ def counter(start, stop):
 print(counter(1, 10)) # Should be "Counting up: 1,2,3,4,5,6,7,8,9,10"
 print(counter(2, 1)) # Should be "Counting down: 2,1"
 print(counter(5, 5))
-
  
- #Dictionaries
- dict1 = {"name": "Mike", "salary": 8000}
-temp = dict1.pop("age")
-print(temp)
  
+# 62
+# Modify the double_word function so that it returns the same word repeated twice, followed
+# by the length of the new doubled word. For example, double_word("hello") should return hellohello10.
 
-sampleDict = { 
-   "class":{ 
-      "student":{ 
-         "name":"Mike",
-         "marks":{ 
-            "physics":70,
-            "history":80
-         }
-      }
-   }
-}def displayPerson(*args):
-    for i in args:
-        print(i)
+def double_word(word):
+    return
 
-displayPerson(name="Emma", age="25")
+print(double_word("hello")) # Should return hellohello10
+print(double_word("abc"))   # Should return abcabc6
+print(double_word(""))      # Should return 0
+
+#ans
+def double_word(word):
+    return word + word+  (str(len(word)*2))
+print(double_word("hello")) # Should return hellohello10
+print(double_word("abc"))   # Should return abcabc6
+print(double_word(""))      # Should return 0
+
+#63
+# accessing a char in strign
+name = "Owen"
+print(name[2])
+
+#64 
+#use Strings and indexing to access the last char in a string
+mission = "To bring tech to all the university students"
+print(mission[-1])
+
+#65
+# Modify the first_and_last 
+# function so that it returns True if the first letter of the string is
+#  the same as the last letter of the string, False if they’re different.
+#  Remember that you can access characters using message[0]
+#  or message[-1]. Be careful how you handle the empty string,
+#  which should return True since nothing is equal to nothing.
+def first_and_last(message):
+      
+        return False
+print(first_and_last("else"))
+print(first_and_last("tree"))
+print(first_and_last(""))
+
+#ans
+def first_and_last(message):
+    if not message or message[0] == message[-1]:
+        return True
+    else:
+        return False
+print(first_and_last("else"))
+print(first_and_last("tree"))
+print(first_and_last(""))
+
+# 66
+#Use String slicing in any word to form the word ran
+fruit = "Orange"
+print(fruit[1:4])
+
+fruits = "pineapple"
+print(fruits[:4])
+print(fruits[4:])
+
+#67
+#correcting string error
+message = "Timz is a doftware developer"
+print(message)
+
+message = "Timz is a doftware developer"
+new_message = message[0:11] + " s" + message[10:]
+print(message)
+print(new_message)
