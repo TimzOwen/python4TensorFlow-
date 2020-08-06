@@ -1029,4 +1029,18 @@ temp = dict1.pop("age")
 print(temp)
  
 
+sampleDict = { 
+   "class":{ 
+      "student":{ 
+         "name":"Mike",
+         "marks":{ 
+            "physics":70,
+            "history":80
+         }
+      }
+   }
+}def displayPerson(*args):
+    for i in args:
+        print(i)
 
+displayPerson(name="Emma", age="25")
