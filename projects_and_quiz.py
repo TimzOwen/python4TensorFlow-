@@ -1093,3 +1093,26 @@ message = "Timz is a doftware developer"
 new_message = message[0:11] + " s" + message[10:]
 print(message)
 print(new_message)
+ 
+#Locating string using index
+message = "Timz is a doftware developer"
+print(message.index("a"))
+#returns 8 including the space char
+
+#write code to check if a member is conatained in a string
+message = "Timz is a doftware developer"
+print(message.index("a")) #index 8
+# check is a value or variable is contained in  a word.
+print("Engineer" in message) # False
+print("developer" in message) #True
+
+#68
+# Write an automation script to automate emails from an old domain to the new domain by an organization
+# use functions and return the emails if already updated
+def replace_domain(email, old_email, new_email):
+  if "@" + old_email in email:
+    index = email.index("@" + old_email)
+    new_email = email[:index] + "@" + new_email
+    return new_email
+  return email
+print(replace_domain("timzowen","timz.owen@eldohub.com","google.com"))
