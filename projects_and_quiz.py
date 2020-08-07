@@ -1116,3 +1116,68 @@ def replace_domain(email, old_email, new_email):
     return new_email
   return email
 print(replace_domain("timzowen","timz.owen@eldohub.com","google.com"))
+
+ 
+ 
+# 68
+# use python methods to convert a string to upper and lower case.
+my_name = "timzowen".upper()
+my_name2 = "TIMZOWEN".lower()
+white_space = "     no white   ".strip()
+right_white_space = "     Again no whites".lstrip()
+left_white_strip = "      No left white steps".rstrip()
+print(my_name)
+print(my_name2)
+print(white_space)
+print(left_white_strip)
+print(right_white_space)
+
+
+is_numeric = "timz".isnumeric()
+is_numeric2 = "13654".isnumeric()
+is_numeric3 = "123kf123".isnumeric()
+print(is_numeric)
+print(is_numeric2)
+print(is_numeric3)
+
+#convert int actual number usign string and add
+results = int("12345") + int("54321")
+print(results) #returns 66666
+
+#joining a strign with spaces
+spaces_join = " ".join(["This ", "is ", "a ", "string ", "joined ", "with ","spaces."])
+print(spaces_join)
+three_dots = "...".join(["This", "is", "a", "string", "joined", "with","spaces."])
+print(three_dots)
+split_a_sentence = "This will be splited into list of strings".split()
+print(split_a_sentence)
+#returns
+This  is  a  string  joined  with  spaces.
+This...is...a...string...joined...with...spaces.
+['This', 'will', 'be', 'splited', 'into', 'list', 'of', 'strings']
+
+# 69
+#Fill in the gaps in the initials function so that it returns the initials of the words contained in the phrase received,
+#in upper case. For example: "Universal Serial Bus" should return "USB"; "local area network" should return "LAN”.
+def initials(phrase):
+    words = phrase.___
+    result = ""
+    for word in words:
+        result += ___
+    return ___
+
+print(initials("Universal Serial Bus")) # Should be: USB
+print(initials("local area network")) # Should be: LAN
+print(initials("Operating system")) # Should be: OS
+
+#ans
+def initials(phrase):
+    words = phrase.split()
+    result = ""
+    for word in words:
+        result += word[0].upper()
+    return result
+print(initials("Universal Serial Bus")) # Should be: USB
+print(initials("local area network")) # Should be: LAN
+print(initials("Operating system")) # Should be: OS
+ 
