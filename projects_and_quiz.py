@@ -1224,3 +1224,15 @@ def degree_to_cel(x):
     return (x-32)*5/9
 for x in range(0,101,10):
     print("{:>3} F | {:>6.2f} C ".format(x,degree_to_cel(x)))
+ 
+    0 F | -17.78 C
+ 10 F | -12.22 C
+ 20 F |  -6.67 C
+ 30 F |  -1.11 C
+ 40 F |   4.44 C
+ 50 F |  10.00 C
+ 60 F |  15.56 C
+ 70 F |  21.11 C
+ 80 F |  26.67 C
+ 90 F |  32.22 C
+100 F |  37.78 C
