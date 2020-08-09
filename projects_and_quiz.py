@@ -1181,3 +1181,46 @@ print(initials("Universal Serial Bus")) # Should be: USB
 print(initials("local area network")) # Should be: LAN
 print(initials("Operating system")) # Should be: OS
  
+
+# 70
+# use Strign concatination with .formart to print an intergert and String together
+user_name = "Timz"
+number = len(user_name)*3
+print("Hello awesome {}, Your luck number today is {}".format(user_name, number))
+
+#re-format to follow a different order
+user_name = "Timz"
+number = len(user_name)*3
+print("Hello awesome {}, Your luck number today is {}".format(user_name, number))
+print("Congratulations, your score is {score},{name}".format(score=len(user_name)*5,name=user_name ))
+
+# 71
+# Modify the student_grade function using the format method,
+#  so that it returns the phrase "X received Y% on the exam". For example, 
+# student_grade("Reed", 80) should return "Reed received 80% on the exam".
+def student_grade(name, grade):
+    	return ""
+print(student_grade("Reed", 80))
+print(student_grade("Paige", 92))
+print(student_grade("Jesse", 85))
+
+#ans
+def student_grade(name, grade):
+    output = "{name} received {grade}% on the exam".format(name=name,grade=grade)
+    return output
+print(student_grade("Reed", 80))
+print(student_grade("Paige", 92))
+print(student_grade("Jesse", 85))
+
+#User format to print decimal to  floating decimal  points
+distance = 2.5
+fuel_cost = distance*1.5
+print("Hiring cost: ${:.2f}. and total cost is ${:.2f} ".format(distance,fuel_cost))
+#ans Hiring cost: $2.50. and total cost is $3.75
+
+# 72
+# use formating tp print a nice table and output to two dp floating point
+def degree_to_cel(x):
+    return (x-32)*5/9
+for x in range(0,101,10):
+    print("{:>3} F | {:>6.2f} C ".format(x,degree_to_cel(x)))
