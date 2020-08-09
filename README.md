@@ -4,7 +4,7 @@ Python is one of the most used programming language in large fields.
 
 Gettting to learn the basics to being a Pro Developer will help you solve programming problems and automate system and also 
 
-run big models in /**machine Learning**/ and /**AI**/
+run big models in **machine Learning** and **AI**
 
 ## Check out some Cheat Sheet over here
 
