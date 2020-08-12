@@ -163,3 +163,141 @@ print(replace_ending("The weather is nice in May", "may", "april"))
 # Should display "The weather is nice in May"
 print(replace_ending("The weather is nice in May", "May", "April"))
 # Should display "The weather is nice in April"
+
+# List
+list_x = ["we", "are","cooking!","some","Chapati"]
+
+#possible operation on list like strings
+print(list_x)
+print(list_x[0])
+print(list_x[2:])
+print(list_x[1:3])
+print(len(list_x))
+print(type(list_x))
+print("are" in type_list)
+
+#  5
+# Using the "split" string method from the preceding lesson, complete the get_word function
+#  to return the {n}th word from a passed sentence. For example, get_word("This is a lesson about lists", 4)
+#  should return "lesson", which is the 4th word in this sentence. Hint: remember that list indexes start at 0, not 1.
+def get_word(sentence, n):
+    	# Only proceed if n is positive 
+	if n > 0:
+		words = ___
+		# Only proceed if n is not more than the number of words 
+		if n <= len(words):
+			return(___)
+	return("")
+
+print(get_word("This is a lesson about lists", 4)) # Should print: lesson
+print(get_word("This is a lesson about lists", -4)) # Nothing
+print(get_word("Now we are cooking!", 1)) # Should print: Now
+print(get_word("Now we are cooking!", 5)) # Nothing
+
+#ans
+def get_word(sentence, n):
+    	# Only proceed if n is positive
+	if n > 0:
+		words = sentence.split()
+		# Only proceed if n is not more than the number of words
+		if n <= len(words):
+			return words[n-1]
+	return (" ")
+print(get_word("This is a lesson about lists", 4)) # Should print: lesson
+print(get_word("This is a lesson about lists", -4)) # Nothing
+print(get_word("Now we are cooking!", 1)) # Should print: Now
+print(get_word("Now we are cooking!", 5)) # Nothing
+
+
+# 6
+# list operations
+#add items to the list.
+cars = ["BMW","BENZ","TOYOTA","IZUZU","FORD"]
+cars.append("AUDI")
+print(cars)
+#add to at a specific index
+cars.insert(1,"HONDA")
+print(cars)
+#remove elements
+cars.remove("IZUZU")
+print(cars)
+#remove elements using indexes
+cars.pop(4)
+print(cars)
+#replace elements using indexes
+cars[1] = "ZUZUKI"
+print(cars)
+
+#ans
+['BMW', 'BENZ', 'TOYOTA', 'IZUZU', 'FORD', 'AUDI']
+['BMW', 'HONDA', 'BENZ', 'TOYOTA', 'IZUZU', 'FORD', 'AUDI']
+['BMW', 'HONDA', 'BENZ', 'TOYOTA', 'FORD', 'AUDI']
+['BMW', 'HONDA', 'BENZ', 'TOYOTA', 'AUDI']
+['BMW', 'ZUZUKI', 'BENZ', 'TOYOTA', 'AUDI']
+
+
+# 7
+# The skip_elements function returns a list containing every other element from an input list, 
+# starting with the first element. 
+# Complete this function to do that, using the for loop to iterate through the input list.
+
+def skip_elements(elements):
+    	# Initialize variables
+	new_list = []
+	i = 0
+
+	# Iterate through the list
+	for ___
+		# Does this element belong in the resulting list?
+		if ___
+			# Add this element to the resulting list
+			___
+		# Increment i
+		___
+
+	return ___
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+print(skip_elements([])) # Should be []
+
+#ans
+def skip_elements(elements):
+    	# Initialize variables
+	new_list = []
+	i = 0
+
+	# Iterate through the list
+	for words in elements:
+		# Does this element belong in the resulting list?
+		if i<len(elements):
+			# Add this element to the resulting list
+			new_list.append(elements[i])
+		# Increment i
+		i+=2
+
+	return new_list
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+print(skip_elements([])) # Should be []
+
+#ans 2
+def skip_elements(elements):
+    # Initialize variables
+    i = 0
+    new_list=elements[::2]
+    return new_list
+
+# Should be ['a', 'c', 'e', 'g']:
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"]))
+# Should be ['Orange', 'Strawberry', 'Peach']:
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach']))
+# Should be []:
+print(skip_elements([]))
+
+
+
+# 8
+
+#Lists and Tuples
