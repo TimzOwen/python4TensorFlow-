@@ -574,4 +574,160 @@ print(pig_latin("programming in python is fun")) # Should be "rogrammingpay niay
 # ans
 
 
+# ans
+def pig_latin(text):
+    say = ""
+    pig_text = []
+    # Separate the text into words
+    words = text.split()
+    for word in words:
+        # Create the pig latin word and add it to the list
+        word = word[1:] + word[0] + "ay"
+        pig_text.append(word)
+        # Turn the list back into a phrase
+    return ' '.join(pig_text)
+print(pig_latin("hello how are you"))  # Should be "ellohay owhay reaay ouyay"
+print(pig_latin("programming in python is fun"))  # Should be "rogrammingpay niay ythonpay siay unfay"
+
+
+# 18
+# The permissions of a file in a Linux system are split into three sets of three permissions: read, write, and execute for 
+# the owner, group, and others. Each of the three values can be expressed as an octal number summing each permission, with 
+# 4 corresponding to read, 2 to write, and 1 to execute. Or it can be written with a string using the letters r, w, and x
+#  or - when the permission is not granted. For example: 640 is read/write for the owner, read for the group, and no permissions
+#   for the others; converted to a string, it would be: "rw-r-----" 755 is read/write/execute for the owner, and read/execute 
+#   for group and others; converted
+#  to a string, it would be: "rwxr-xr-x" Fill in the blanks to make the code convert a permission in octal format into a string format.
+def octal_to_string(octal):
+    result = ""
+    value_letters = [(4,"r"),(2,"w"),(1,"x")]
+    # Iterate over each of the digits in octal
+    for ___ in [int(n) for n in str(octal)]:
+        # Check for each of the permissions values
+        for value, letter in value_letters:
+            if ___ >= value:
+                result += ___
+                ___ -= value
+            else:
+                ___
+    return result
+
+print(octal_to_string(755)) # Should be rwxr-xr-x
+print(octal_to_string(644)) # Should be rw-r--r--
+print(octal_to_string(750)) # Should be rwxr-x---
+print(octal_to_string(600)) # Should be rw-------
+
+# Ans
+def octal_to_string(octal):
+    permission = ["---", "--x", "-w-", "-wx", "r--", "r-x", "rw-", "rwx"]
+    result = ""
+    # Iterate over each of the digits in octal
+    for ___ in [int(n) for n in str(octal)]:
+        result += permission[___]
+    return result
+
+print(octal_to_string(755))
+print(octal_to_string(644))
+print(octal_to_string(750))
+print(octal_to_string(600))
+
+#ans 
+def octal_to_string(octal):
+       result = ""
+   value_letters = [(4,"r"),(2,"w"),(1,"x")]
+   # Iterate over each of the digits in octal
+   for ___ in [int(n) for n in str(octal)]:
+      # Check for each of the permissions values
+      for value, letter in value_letters:
+          if ___ >= value:
+               result += letter
+               ___ -= value
+          else:
+               result += "-"
+   return result
+
+print(octal_to_string(755))
+print(octal_to_string(644))
+print(octal_to_string(750))
+print(octal_to_string(600))
+
+#ans
+def octal_to_string(octal):
+     result = ""
+ value_letters = [(4,"r"),(2,"w"),(1,"x")]
+ # Iterate over each of the digits in octal
+ for i in [int(n) for n in str(octal)]:
+    # Check for each of the permissions values
+    for value, letter in value_letters:
+        if i >= value:
+            result += letter
+            i -= value
+        else:
+            result += '-'
+ return result
+print(octal_to_string(755))
+print(octal_to_string(644))
+print(octal_to_string(750))
+print(octal_to_string(600))
+
+
+# 19
+
+# The group_list function accepts a group name and a list of members, and returns a string with the format: group_name:
+# member1, member2, … For example, group_list("g", ["a","b","c"]) returns "g: a, b, c". Fill in the gaps in this function to do that.
+def group_list(group, users):
+      members = ___
+  return ___
+
+print(group_list("Marketing", ["Mike", "Karen", "Jake", "Tasha"])) # Should be "Marketing: Mike, Karen, Jake, Tasha"
+print(group_list("Engineering", ["Kim", "Jay", "Tom"])) # Should be "Engineering: Kim, Jay, Tom"
+print(group_list("Users", "")) # Should be "Users:"
+
+# ans
+def group_list(group, users):
+      members = ", ".join(users)
+  return ("{}:{}".format(group,members))
+
+print(group_list("Marketing", ["Mike", "Karen", "Jake", "Tasha"])) # Should be "Marketing: Mike, Karen, Jake, Tasha"
+print(group_list("Engineering", ["Kim", "Jay", "Tom"])) # Should be "Engineering: Kim, Jay, Tom"
+print(group_list("Users", "")) # Should be "Users:"
+
+
+# 20
+
+# The guest_list function reads in a list of tuples with the name, age, and profession of each party guest, and prints 
+# the sentence "Guest is X years old and works as __." for each one. For example, 
+# guest_list(('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")) should print out: Ken is 30 years old and works as Chef.
+#  Pat is 35 years old and works as Lawyer. Amanda is 25 years old and works as Engineer. Fill in the gaps in this function to do that.
+def guest_list(guests):
+    	for ___:
+		___
+		print(___.format(___))
+
+guest_list([('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")])
+
+#Click Run to submit code
+"""
+Output should match:
+Ken is 30 years old and works as Chef
+Pat is 35 years old and works as Lawyer
+Amanda is 25 years old and works as Engineer
+"""
+
+#ans
+
+def guest_list(guests):
+    	count = 0
+	if count < 3:
+		for guest in guests:
+			name, age, job = guest
+			print("{} is {} years old and works as {}".format(name, age, job))
+			count = count + 1
+guest_list([('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")])
+
+"""
+Output should match:
+Ken is 30 years old and works as Chef
+Pat is 35 years old and works as Lawyer
+"""
 
