@@ -731,3 +731,216 @@ Ken is 30 years old and works as Chef
 Pat is 35 years old and works as Lawyer
 """
 
+
+# DICTIONARIES
+# store data in key and value pair
+dictiona_ary = {}
+<class 'dict'>
+
+file_counts = {"jpg":12, "png":6,"csv":15,"pdf":45,"txt":2}
+#add new data
+file_counts["docx"] = 12
+#delete data
+del file_counts["txt"]
+#replace with same key
+file_counts[png]=12
+
+print(file_counts)
+print(file_counts["pdf"])
+print("csv" in file_counts)
+print("java" in file_counts) 
+
+#output
+{'jpg': 12, 'png': 12, 'csv': 15, 'pdf': 45, 'docx': 12}
+45
+True
+False
+
+# 21
+#The "toc" dictionary represents the table of contents for a book. Fill in the blanks to do the following: 1) 
+#add an entry for Epilogue on page 39. 2) Change the page number for Chapter 3 to 24. 3) Display the new
+#dictionary contents. 4) Display True if there is Chapter 5, False if there isn't.
+
+toc = {"Introduction":1, "Chapter 1":4, "Chapter 2":11, "Chapter 3":25, "Chapter 4":30}
+___ # Epilogue starts on page 39
+___ # Chapter 3 now starts on page 24
+___ # What are the current contents of the dictionary?
+___ # Is there a Chapter 5?
+
+#ans
+toc = {"Introduction":1, "Chapter 1":4, "Chapter 2":11, "Chapter 3":25, "Chapter 4":30}
+toc["Epilogue"]=39 # Epilogue starts on page 39
+toc["Chapter 3"]=24 # Chapter 3 now starts on page 24
+print(toc) # What are the current contents of the dictionary?
+print("Chapter 5" in toc) # Is there a Chapter 5?
+
+#Iterating through  a dictionary
+file_extenstion ={"jpg":12, "png":6,"csv":15,"pdf":45,"txt":2}
+for extension in file_extenstion:
+    print(extension)
+
+jpg
+png
+csv
+pdf
+txt
+for ext,size in file_extenstion.items():
+    print("There are {} files with extension of {}".format(size,ext))
+#output
+There are 12 files with extension of jpg
+There are 6 files with extension of png
+There are 15 files with extension of csv
+There are 45 files with extension of pdf
+There are 2 files with extension of txt
+
+print(file_extenstion.keys())
+print(file_extenstion.values())
+# output
+dict_keys(['jpg', 'png', 'csv', 'pdf', 'txt'])
+dict_values([12, 6, 15, 45, 2])
+
+
+# 22
+# Complete the code to iterate through the keys 
+# and values of the cool_beasts dictionary. Remember that the items 
+# method returns a tuple of key, value for each element in the dictionary.
+cool_beasts = {"octopuses":"tentacles", "dolphins":"fins", "rhinos":"horns"}
+for ___ in cool_beasts.items():
+    print("{} have {}".format(___))
+    
+#ans
+cool_beasts = {"octopuses":"tentacles", "dolphins":"fins", "rhinos":"horns"}
+for beasts,tool in cool_beasts.items():
+    print("{} have {}".format(beasts,tool))
+octopuses have tentacles
+dolphins have fins
+rhinos have horns
+
+
+#counting  characters in a string 
+def count_letter(text):
+    result = {}
+    for letter in text:
+        if letter not in result:
+            result[letter]=0
+        result[letter] +=1
+    return result
+print(count_letter("Timz owen"))
+print(count_letter("Kabudaaa") )
+
+#output 
+{'T': 1, 'i': 1, 'm': 1, 'z': 1, ' ': 1, 'o': 1, 'w': 1, 'e': 1, 'n': 1}
+{'K': 1, 'a': 4, 'b': 1, 'u': 1, 'd': 1}
+
+# 23
+#In Python, a dictionary can only hold a single value for a given key. To workaround this, our single value can be a
+# list containing multiple values. Here we have a dictionary called "wardrobe" with items of clothing and their colors.
+#  Fill in the blanks to print a line for each item of clothing with each color, for example: "red shirt", "blue shirt", and so on.
+wardrobe = {"shirt":["red","blue","white"], "jeans":["blue","black"]}
+for __:
+	for __:
+		print("{} {}".format(__))
+
+  #answer
+  wardrobe = {"shirt":["red","blue","white"], "jeans":["blue","black"]}
+count=0
+for key, value in wardrobe.items():
+    for i in value:
+        if count <3:
+          print("{} shirt".format(i))
+          count+=1
+    else:
+        print("{} jeans".format(i))
+
+#solution 2
+wardrobe = {"shirt":["red","blue","white"], "jeans":["blue","black"]}
+for color, clothings in wardrobe.items():
+    for clothing in clothings:
+        print("{} {}".format(clothing,color))
+
+# 24
+# The email_list function receives a dictionary, which contains domain names as keys, and a
+# list of users as values. Fill in the blanks to generate a list that contains complete email addresses (e.g. diana.prince@gmail.com).
+def email_list(domains):
+    	emails = []
+	for ___:
+	  for user in users:
+	    emails.___
+	return(emails)
+
+print(email_list({"gmail.com": ["clark.kent", "diana.prince", "peter.parker"],
+                   "yahoo.com": ["barbara.gordon", "jean.grey"], "hotmail.com": ["bruce.wayne"]}))
+
+#ans
+
+# 25
+# The groups_per_user function receives a dictionary, which contains group names with the list of users. Users can belong
+# to multiple groups. Fill in the blanks to return a dictionary with the users as keys and a list of their groups as values
+
+def groups_per_user(group_dictionary):
+    	user_groups = {}
+	# Go through group_dictionary
+	for ___:
+		# Now go through the users in the group
+		for ___:
+			# Now add the group to the the list of
+# groups for this user, creating the entry
+# in the dictionary if necessary
+
+	return(user_groups)
+
+print(groups_per_user({"local": ["admin", "userA"],
+		"public":  ["admin", "userB"],
+		"administrator": ["admin"] }))
+
+#solution 3
+def groups_per_user(group_dictionary):
+    user_groups = {}
+    for group, users in group_dictionary.items():
+        for user in users:
+            user_groups.setdefault(user, []).append(group)
+    return user_groups
+print(groups_per_user({"local": ["admin", "userA"],
+		"public":  ["admin", "userB"],
+		"administrator": ["admin"] }))
+
+#solution 3
+
+# # 26
+# Question 26
+# The add_prices function returns the total price of all of the groceries in the dictionary. Fill in the blanks to complete this function.
+
+def add_prices(basket):
+    	# Initialize the variable that will be used for the calculation
+	total = 0
+	# Iterate through the dictionary items
+	for ___:
+		# Add each price to the total calculation
+		# Hint: how do you access the values of
+		# dictionary items?
+		total += ___
+	# Limit the return value to 2 decimal places
+	return round(total, 2)  
+
+groceries = {"bananas": 1.56, "apples": 2.50, "oranges": 0.99, "bread": 4.59, 
+	"coffee": 6.99, "milk": 3.39, "eggs": 2.98, "cheese": 5.44}
+
+print(add_prices(groceries)) # Should print 28.44
+
+#ans
+def add_prices(basket):
+    	# Initialize the variable that will be used for the calculation
+	total = 0
+	# Iterate through the dictionary items
+	for i in basket:
+		# Add each price to the total calculation
+		# Hint: how do you access the values of
+		# dictionary items?
+		total += basket[i]
+	# Limit the return value to 2 decimal places
+	return round(total, 2)
+
+groceries = {"bananas": 1.56, "apples": 2.50, "oranges": 0.99, "bread": 4.59,
+	"coffee": 6.99, "milk": 3.39, "eggs": 2.98, "cheese": 5.44}
+
+print(add_prices(groceries)) # Should print 28.44
