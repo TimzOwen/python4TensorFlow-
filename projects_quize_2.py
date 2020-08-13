@@ -462,5 +462,116 @@ print(odd_numbers(1))  # Should print [1]
 print(odd_numbers(-1)) # Should print []
 
 #ans
+def odd_numbers(n):
+    	return  [ x for x in range(1,n+1) if x % 2 != 0 ]
+
+print(odd_numbers(5))  # Should print [1, 3, 5]
+print(odd_numbers(10)) # Should print [1, 3, 5, 7, 9]
+print(odd_numbers(11)) # Should print [1, 3, 5, 7, 9, 11]
+print(odd_numbers(1))  # Should print [1]
+print(odd_numbers(-1)) # Should print []\
+
+# 14
+
+#Given a list of filenames, we want to rename all the files with extension hpp to the extension h.
+# To do this, we would like to generate a new list called newfilenames, consisting of the new filenames.
+#Fill in the blanks in the code using any of the methods you’ve learned thus far, like a for loop or a list comprehension.
+filenames = ["program.c", "stdio.hpp", "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+# Generate newfilenames as a list containing the new filenames
+# using as many lines of code as your chosen method requires.
+___  
+
+print(newfilenames) 
+# Should be ["program.c", "stdio.h", "sample.h", "a.out", "math.h", "hpp.out"]
+
+#ans
+filenames = ["program.c", "stdio.hpp", "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+newfilenames = []
+for filename in filenames:
+    if ".hpp" in filename:
+        index = filename.index(".hpp")
+        newfilename = filename[:index] + ".h"
+    else:
+        newfilename = filename
+    newfilenames.append((filename,newfilename))
+print(newfilenames)
+# Should be ["program.c", "stdio.h", "sample.h", "a.out", "math.h", "hpp.out"]
+
+#ans 2
+filenames = ["program.c", "stdio.hpp", "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+newfilenames=[]
+for file in filenames:
+    if file.endswith("hpp"):
+        newfilenames.append(file.replace(".hpp",".h"))
+    else:
+        newfilenames.append(file)
+print(newfilenames)
+
+
+# 15
+# The format_address function separates out parts of the address string into new strings:
+# house_number and street_name, and returns: "house number X on street named Y". The
+# format of the input string is: numeric house number, followed by the street name
+#  which may contain numbers, but never by themselves, and could be several words long. For example, 
+# "123 Main Street", "1001 1st Ave", or "55 North Center Drive". Fill in the gaps to complete this function.
+def format_address(address_string):
+      # Declare variables
+  house_number = 0
+  street_name = ""
+  # Separate the address string into parts
+  separated_address = address_string.split()
+  # Traverse through the address parts
+  for address in separated_address:
+    # Determine if the address part is the
+    # house number or part of the street name
+    if address.isnumeric():
+      house_number = address
+  # Does anything else need to be done 
+  # before returning the result?
+    else:
+      street_name += address + " "
+  # Return the formatted string  
+  return "house number {} on street named {}".format(house_number, street_name)
+
+print(format_address("123 Main Street"))
+# Should print: "house number 123 on street named Main Street"
+
+print(format_address("1001 1st Ave"))
+# Should print: "house number 1001 on street named 1st Ave"
+
+print(format_address("55 North Center Drive"))
+# Should print "house number 55 on street named North Center Drive"
+
+
+# 16
+# The highlight_word function changes the given word in a sentence to its upper-case 
+# version. For example, highlight_word("Have a nice day", "nice") returns
+#  "Have a NICE day". Can you write this function in just one line?
+def highlight_word(sentence, word):
+    	return(sentence.replace(word, word.upper()))
+
+print(highlight_word("Have a nice day", "nice"))
+print(highlight_word("Shhh, don't be so loud!", "loud"))
+print(highlight_word("Automating with Python is fun", "fun"))
+
+
+# 
+# create a function that turns text into pig latin: a simple text transformation
+# that modifies each word moving the first character to the end and appending "ay" to the end. For example, python ends up as ythonpay.
+def pig_latin(text):
+      say = ""
+  # Separate the text into words
+  words = ___
+  for word in words:
+    # Create the pig latin word and add it to the list
+    ___
+    # Turn the list back into a phrase
+  return ___
+
+print(pig_latin("hello how are you")) # Should be "ellohay owhay reaay ouyay"
+print(pig_latin("programming in python is fun")) # Should be "rogrammingpay niay ythonpay siay unfay"
+
+# ans
+
 
 
