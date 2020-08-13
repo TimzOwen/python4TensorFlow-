@@ -301,3 +301,166 @@ print(skip_elements([]))
 # 8
 
 #Lists and Tuples
+#EX
+tuples_here = ('Computer','Department','IP')
+print(type(tuples_here))
+
+#Ex
+def convert_time(seconds):
+    hours = seconds // 3600
+    minutes = (seconds - hours * 3600) // 60
+    seconds_remaining = (seconds - (minutes * 60 + hours * 3600))
+    return hours, minutes, seconds_remaining
+result = convert_time(2000)
+hours, minutes, seconds_remaining = result
+print(result)
+print(type(result))
+print(convert_time(4000))
+print(hours,minutes,seconds_remaining)
+
+(0, 33, 20)
+<class 'tuple'>
+(1, 6, 40)
+0 33 20
+
+
+# 9
+# use tuples to store information about a file: its name, its type and its size in bytes.
+#Fill in the gaps in this code to return the size in kilobytes (a kilobyte is 1024 bytes) up to 2 decimal places.
+def file_size(file_info):
+    	___, ___, ___= file_info
+	return("{:.2f}".format(___ / 1024))
+
+print(file_size(('Class Assignment', 'docx', 17875))) # Should print 17.46
+print(file_size(('Notes', 'txt', 496))) # Should print 0.48
+print(file_size(('Program', 'py', 1239))) # Should print 1.21
+
+# Ans
+def file_size(file_info):
+    name, type, size= file_info
+    return("{:.2f}".format(size/ 1024))
+print(file_size(('Class Assignment', 'docx', 17875))) # Should print 17.46
+print(file_size(('Notes', 'txt', 496))) # Should print 0.48
+print(file_size(('Program', 'py', 1239))) # Should print 1.21
+
+# summary
+#. Strings are sequences of characters, and are immutable. Lists are sequences of elements of
+#  any data type, and are mutable. The third sequence type is the tuple.
+#  Tuples are like lists, since they can contain elements of any data type. But unlike lists, tuples are immutable. 
+
+#Ex
+animal =["twiga","simba","lion","Giraffe","elephant"]
+char = 0
+for wildAnimals in animal:
+    char += len(animal)
+print("total animals characters : {}, and in avarage are:{}".format(char,char/len(animal)))
+
+#using enumarate to find specific index
+lecturers = ["mr Kebut", "mr Owen","Dr Maganga","Dr Rugiri","prof Wanyama","prof Chepkilot"]
+for index,lecture in enumerate(lecturers):
+  print("{} - {} ".format(index + 1, lecture))
+  
+1 - mr Kebut 
+2 - mr Owen 
+3 - Dr Maganga 
+4 - Dr Rugiri 
+5 - prof Wanyama 
+6 - prof Chepkilot 
+
+
+# 10
+#Try out the enumerate function for yourself in this quick exercise. Complete the skip_elements
+#function to return every other element from the list, this time using the enumerate function
+#to check if an element is on an even position or an odd position.
+def skip_elements(elements):
+    	# code goes here
+
+	return ___
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+
+#ans 1
+def skip_elements(elements):
+    # code goes here
+    #Create an empty list
+    list=[]
+    #iterate through using enumarate
+    for index,element in enumerate(elements):
+        #check if the elements are even and proceed
+        if index%2==0:
+            list.append("{}".format(element))
+    return list
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"]))  # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(
+    ['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach']))  # Should be ['Orange', 'Strawberry', 'Peach']
+
+#ans 2
+def skip_elements(elements):
+    elements = [v for i, v in enumerate(elements) if i % 2 == 0]
+    return elements
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"]))  # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(
+    ['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach']))
+
+#ans 3
+def skip_elements(elements):
+    # code goes here
+    element = []
+    for i, e in enumerate(elements):
+        if i % 2 == 0:
+            element.append(e)
+    return element
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"]))  # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(
+    ['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach']))
+
+# 11
+#using enumerate function, create an automation email task to print emails and user names;
+def full_list_emails(employees):
+      #create an empaty list to store the emails
+  updated_list=[]
+  for names,emails in  employees:
+    updated_list.append("{} <{}".format(names,emails))
+  return updated_list
+print(("timz@gmail.com","Timz owen"),("owen@gmail.com","Owen Gusir"))
+
+#List Comperehesion
+# 12
+#Use List comprehesion in to reduce the the code to almost one line:
+
+multiple_list = []
+for x in range(1,20):
+    x=x*7
+    multiple_list.append(x)
+print(multiple_list)
+
+#ans
+multiples = [ x*7 for x in range(1,20)]
+print((multiples))
+
+#iterate using list comprehension to find the lenght of words
+coding_languages = ["Python","Java","Spring",".net","Ruby"]
+leght_of_strings= [ len(coding_language) for coding_language in coding_languages]
+print(leght_of_strings)
+
+#print values of numbers between 1 and 100 and only thos deveible by 5
+disivible_by_5 = [i for i in range(1,101) if i % 3 ==0]
+print(disivible_by_5)
+
+# 13 
+# The odd_numbers function returns a list of odd numbers between
+# 1 and n, inclusively. Fill in the blanks in the function, using list comprehension.
+# Hint: remember that list and range counters start at 0 and end at the limit minus 1.
+
+def odd_numbers(n):
+    	return [x for x in ___ if ___]
+print(odd_numbers(5))  # Should print [1, 3, 5]
+print(odd_numbers(10)) # Should print [1, 3, 5, 7, 9]
+print(odd_numbers(11)) # Should print [1, 3, 5, 7, 9, 11]
+print(odd_numbers(1))  # Should print [1]
+print(odd_numbers(-1)) # Should print []
+
+#ans
+
+
