@@ -407,3 +407,238 @@ monkeys = Monkey()
 print(monkeys.moneky_mtoto())
 new_mobkey = monkeys.farms_attacked = 10
 print(monkeys.moneky_mtoto())
+
+
+
+# Q5
+#OK, now it’s your turn! Have a go at writing methods
+# for a class. Create a Dog class with dog_years based
+#  on the Piglet class shown before (one human year is about 7 dog years).
+class Dog:
+      years = 0
+  __
+
+fido=Dog()
+fido.years=3
+print(fido.dog_years())
+
+# soln
+class Dog:
+   years = 0
+  def dog_years(self):
+    return self.years*7
+
+fido=Dog()
+fido.years=3
+print(fido.dog_years())
+
+# CONSTRUCTOR AND IMPORTANCT METHODS:
+#Constructors allows us to pass in parameters directly to the instances created
+#example
+class Coffee:
+    def __init__(self, brand, flavour):
+        self.brand = brand
+        self.flavour = flavour
+drinkCoffee = Coffee("mac Coffee", "black")
+print(drinkCoffee.brand)
+print(drinkCoffee.flavour)
+
+#Q 6:
+# Want to see this in action? In this code, there's a Person class that has an attribute name,
+# which gets set when constructing the object. Fill in the blanks so that 1) when an instance of the class is
+# created, the attribute gets set correctly, and 2) when the greeting() method is called, the greeting states the assigned name.
+class Person:
+    def __init__(self, name):
+        self.name = ___
+    def greeting(self):
+        # Should return "hi, my name is " followed by the name of the Person.
+        return ___ 
+
+# Create a new instance with a name of your choice
+some_person = ___  
+# Call the greeting method
+print(some_person.___)
+
+#soln 
+class Person:
+    def __init__(self, name):
+        self.name = name
+    def greeting(self):
+        # Should return "hi, my name is " followed by the name of the Person.
+        user_name = ("hi, my name is {}".format(self.name))
+        return user_name
+
+# Create a new instance with a name of your choice
+some_person = Person("owen")
+# Call the greeting method
+print(some_person.greeting())
+
+
+#soln 2
+class Person:
+    def __init__(self, name):
+        self.name = name
+    def greeting(self):
+        # Should return "hi, my name is " followed by the name of the Person.
+        return "hi, my name is {}".format(self.name)
+
+# Create a new instance with a name of your choice
+some_person = Person("Owen")
+# Call the greeting method
+print(some_person.greeting())
+
+
+#using __str__ to print direct out put and not storage address by computer on ommiting str conversion
+class Computer:
+    def __init__(self,model,storage):
+        self.model =model
+        self.storage=storage
+    def __str__(self):
+        return "Model {} had a storage of {}".format(self.model,self.storage)
+pc = Computer("HP",str(10))
+print(pc) # Model HP had a storga of 10
+
+
+#using DocString for documenting your work. (Typing help to the funciton or methods show what it does)
+>>> def to_seconds(hours, minutes, seconds):
+...     """Returns the amount of seconds in the given hours, minutes and seconds."""
+...     return hours*3600+minutes*60+seconds
+... >>> help(to_seconds)
+Help on function to_seconds in module __main__:
+
+to_seconds(hours, minutes, seconds)
+    Returns the amount of seconds in the given hours, minutes and seconds.
+    
+#more example
+class ClassName:
+    """Documentation for the class."""
+    def method_name(self, other_parameters):
+        """Documentation for the method."""
+        body_of_method
+        
+def function_name(parameters):
+    """Documentation for the function."""
+    body_of_function
+
+
+# Q 7:
+#write code to define an Elevator class. The elevator has a current floor, it also has a top and a bottom floor
+# that are the minimum and maximum floors it can go to. Fill in the blanks to make the elevator go through the floors requested.
+
+class Elevator:
+    def __init__(self, bottom, top, current):
+        """Initializes the Elevator instance."""
+        pass
+    def up(self):
+        """Makes the elevator go up one floor."""
+        pass
+    def down(self):
+        """Makes the elevator go down one floor."""
+        pass
+    def go_to(self, floor):
+        """Makes the elevator go to the specific floor."""
+        pass
+
+elevator = Elevator(-1, 10, 0)
+
+#soln
+class Elevator:
+    def __init__(self, bottom, top, current):
+        """Initializes the Elevator instance."""
+        self.bottom = bottom
+        self.top=top
+        self.current=current
+    def up(self,current):
+        """Makes the elevator go up one floor."""
+        if self.current < self.top:
+            return self.current+1
+    def down(self, bottom):
+        """Makes the elevator go down one floor."""
+        if self.current > self.top:
+            return self.current -1
+    def go_to(self, floor):
+        """Makes the elevator go to the specific floor."""
+        self.floor=floor
+        return self.floor
+elevator = Elevator(-1, 10, 0)
+
+
+#soln
+class Elevator:
+    def __init__(self, bottom, top, current):
+        """Initializes the Elevator instance."""
+        self.bottom = bottom
+        self.top = top
+        self.current=current
+    def up(self):
+        """Makes the elevator go up one floor."""
+        if self.current < self.top:
+            return self.current + 1
+    def down(self):
+        """Makes the elevator go down one floor."""
+        if self.current >self.bottom:
+            return self.current - 1
+    def go_to(self, floor):
+        """Makes the elevator go to the specific floor."""
+        if self.floor <= self.top and self.floor>=self.bottom:
+            return self.current = floor
+
+elevator = Elevator(-1, 10, 0)
+
+#soln
+class Elevator:
+    def __init__(self, bottom, top, current):
+        """Initializes the Elevator instance."""
+        self.bottom = 0
+        self.top = 0
+        self.current = 0
+    def up(self):
+        """Makes the elevator go up one floor."""
+        if self.current != self.top:
+            return self.current + 1
+    def down(self):
+        """Makes the elevator go down one floor."""
+        if self.current != self.bottom:
+            return self.current - 1
+    def go_to(self, floor):
+        """Makes the elevator go to the specific floor."""
+        self.current = floor
+        return self.current
+
+elevator = Elevator(-1, 10, 0)
+
+#soln 
+class Elevator:
+    def __init__(self, bottom, top, current):
+        """Initializes the Elevator instance."""
+        self.bottom = 0
+        self.top = 10
+        self.current = 0
+    def up(self):
+        """Makes the elevator go up one floor."""
+        if self.current == 10:
+            self.current += 0
+        else:
+            self.current += 1
+    def down(self):
+        """Makes the elevator go down one floor."""
+        if self.current <= -1:
+            self.current -= 0
+            """Makes the elevator go down one floor."""
+        else:
+            self.current -= 1
+            
+    def go_to(self, floor):
+        """Makes the elevator go to the specific floor."""
+        self.current = floor
+    def __str__(self):
+        return "Current floor: {}".format(self.current)
+
+elevator = Elevator(-1, 10, 0)
+
+elevator.up() 
+elevator.current #should output 1
+elevator.down() 
+elevator.current #should output 0
+elevator.go_to(10) 
+elevator.current #should output 10
