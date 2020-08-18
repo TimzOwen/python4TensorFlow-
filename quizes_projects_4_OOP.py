@@ -343,3 +343,67 @@ print(describe_furniture(table))
 # Should be "This piece of furniture is made of brown wood"
 print(describe_furniture(couch))
 # Should be "This piece of furniture is made of red leather"
+
+
+
+
+#methods in classes Exmaple
+class Animals:
+    def animalSounds(self):
+         print("Wouh wouh!!")
+dog = Animals()
+print(dog.animalSounds())
+
+
+#EX 2
+class Dog:
+    def barking(self):
+        print("Wouuh, wouuh")
+lion = Dog()
+print(lion.barking())
+
+# Ex 3
+class Bmw:
+    def bmwType(self):
+        brand="bmw3201"
+        print("This brand is {}, and is the best in the market".format(brand))
+brandCar = Bmw()
+print(brandCar.bmwType())
+
+#EX 4
+#uses self and declared above the function to allow the member varibales to be changeable
+class Bmw:
+    brand = "bmw3201"
+    def bmwType(self):
+        print("This brand is {}, and is the best in the market".format(self.brand))
+brandCar = Bmw()
+print(brandCar.bmwType())
+brandCar.brand = "BMWX3"
+print(brandCar.bmwType())
+
+#createing more than one instance from the same class
+class Bmw:
+    brand = "bmw3201"
+    def bmwType(self):
+        print("This brand is {}, and is the best in the market".format(self.brand))
+brandCar = Bmw()
+print(brandCar.bmwType())
+brandCar.brand = "BMWX3"
+print(brandCar.bmwType())
+
+#Instance 2
+newbrand = Bmw()
+newbrand.brand = "BMWX6"
+print(newbrand.bmwType())
+
+
+#Return values from classes and methods
+class Monkey:
+    farms_attacked = 0
+
+    def moneky_mtoto(self):
+        return self.farms_attacked * 12
+monkeys = Monkey()
+print(monkeys.moneky_mtoto())
+new_mobkey = monkeys.farms_attacked = 10
+print(monkeys.moneky_mtoto())
