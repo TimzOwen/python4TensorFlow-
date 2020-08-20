@@ -642,3 +642,80 @@ elevator.down()
 elevator.current #should output 0
 elevator.go_to(10) 
 elevator.current #should output 10
+
+
+#INHERITANCE
+#This allows us to reuse our code base:
+#Inherits behavior from the root parent for all the siblings
+class Cars:
+    def __init__(self,max_speed, model):
+        self.speed = max_speed
+        self.model = model
+
+#create an instance of Zubaru class
+class Zubaru(Cars):
+    pass
+class Bmw(Cars):
+    pass
+
+zubaru_squad = Zubaru("200km/h", "Zubaru impreza")
+bima_squad = Bmw("400km/hr", "BMW X6")
+print(zubaru_squad.speed)
+print(bima_squad.model)
+
+
+#Example 2
+class Animal:
+    sound=""
+    def __init__(self,name):
+        self.name = name
+    def speak(self):
+        print("{sound} I'm {name}! {sound}".format(name = self.name, sound=self.sound))
+class Piglet(Animal):
+    sound = "Oink"
+hamlet=Piglet("Hamlet")
+print(hamlet.speak())
+class Dog(Animal):
+    sound = "Wouuuuuuh"
+barking  = Dog("Simba")
+print(barking.speak())
+
+
+# Q 8
+#Let’s create a new class together and inherit from it. Below we have a base class called Clothing. Together,
+#let’s create a second class, called Shirt, that inherits methods from the Clothing class. Fill in the blanks to make it work properly.
+class Clothing:
+      material = ""
+  def __init__(self,name):
+    self.name = name
+  def checkmaterial(self):
+	  print("This {} is made of {}".format(self.___,self.___))
+			
+class Shirt(___):
+  material="Cotton"
+
+
+polo = Shirt("Polo")
+polo.checkmaterial()
+
+
+#soln
+class Clothing:
+    material = ""
+
+
+    def __init__(self, name):
+        self.name = name
+
+
+    def checkmaterial(self):
+        print("This {} is made of {}".format(self.name, self.material))
+
+
+class Shirt(Clothing):
+    material = "Cotton"
+
+
+polo = Shirt("Polo")
+print(polo.checkmaterial())
+
