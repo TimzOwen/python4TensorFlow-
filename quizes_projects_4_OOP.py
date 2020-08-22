@@ -855,3 +855,244 @@ print(current_stock)
 ...          return result
 
 
+# UPNEXT ARE MODULES::
+# modules allow us to organize functions, methods,classes and any other data related together in a structured way.
+
+#EX 1:
+import random
+
+print(random.randint(1,5))
+print(random.randint(1,5))
+print(random.randint(1,5))
+
+2
+5
+4
+
+# EX 2
+# using datetime
+import datetime
+
+current_time = datetime.datetime.now()
+print(type(current_time))
+print(current_time)
+print(current_time.year)
+print(current_time.time())
+print(current_time + datetime.timedelta(days=30)) #prints after certain time scheduled
+#output
+
+<class 'datetime.datetime'>
+2020-08-21 18:12:51.615840
+2020
+18:12:51.615840
+2020-09-20 18:12:51.615840
+
+
+#final quiz combinations
+#Begin Portion 1
+
+#In this exercise, we'll create a few classes to simulate a server that's taking connections from
+# the outside and then a load balancer that ensures that there are enough servers to serve those connections.
+# To represent the servers that are taking care of the connections, we'll use a Server class. Each connection
+#  is represented by an id, that could, for example, be the IP address of the computer connecting to the server.
+# For our simulation, each connection creates a random amount of load in the server, between 1 and 10.
+# Run the following code that defines this Server class.
+
+import random
+
+class Server:
+    def __init__(self):
+        """Creates a new server instance, with no active connections."""
+        self.connections = {}
+
+    def add_connection(self, connection_id):
+        """Adds a new connection to this server."""
+        connection_load = random.random()*10+1
+        # Add the connection to the dictionary with the calculated load
+
+    def close_connection(self, connection_id):
+        """Closes a connection on this server."""
+        # Remove the connection from the dictionary
+
+    def load(self):
+        """Calculates the current load for all connections."""
+        total = 0
+        # Add up the load for each of the connections
+        return total
+
+    def __str__(self):
+        """Returns a string with the current load of the server"""
+        return "{:.2f}%".format(self.load())
+
+#End Portion 1#
+
+#create a server instance
+server = Server()
+server.add_connection("192.168.1.1")
+
+print(server.load())  # should give you a 0 meaning no connected server
+
+#close server connecition
+server.close_connection("192.168.1.1")
+print(server.load())
+
+
+
+
+
+
+# LOADSERVER
+class LoadBalancing:
+    	def __init__(self):
+		"""Initialize the load balancing system with one server"""
+		self.connections = {}
+		self.servers = [Server()]
+
+	def add_connection(self, connection_id):
+		"""Randomly selects a server and adds a connection to it."""
+		server = random.choice(self.servers)
+		self.connection_id = connection_id
+		# Add the connection to the dictionary with the selected server
+		self.connections[self.connection_id]=server
+		print (server.load())
+		# Add the connection to the server
+		Server.add_connection(server)
+
+	def close_connection(self, connection_id):
+		"""Closes the connection on the the server corresponding to connection_id."""
+		# Find out the right server
+		server = self.connections[connection_id]
+		# Close the connection on the server
+		Server.close_connection(server)
+		# Remove the connection from the load balancer
+		del self.connections[connection_id]
+  
+  
+  #LOAD2
+  
+  class LoadBalancing:
+    	def __init__(self):
+		"""Initialize the load balancing system with one server"""
+		self.connections = {}
+		self.servers = [Server()]
+
+	def add_connection(self, connection_id):
+		"""Randomly selects a server and adds a connection to it."""
+		server = random.choice(self.servers)
+		self.connection_id = connection_id
+		# Add the connection to the dictionary with the selected server
+		self.connections[self.connection_id]=server
+		print (server.load())
+		# Add the connection to the server
+		server.add_connection(server)
+
+	def close_connection(self, connection_id):
+		"""Closes the connection on the the server corresponding to connection_id."""
+		# Find out the right server
+		server = self.connections[connection_id]
+		# Close the connection on the server
+		server.close_connection(server)
+		# Remove the connection from the load balancer
+		del self.connections[connection_id]
+
+	def avg_load(self):
+		"""Calculates the average load of all servers"""
+		# Sum the load of each server and divide by the amount of servers
+		total = 0
+		for connection in self.connections.values():
+			#for servs in self.connection.:
+			total += connection.load()
+		return total
+
+	def ensure_availability(self):
+		"""If the average load is higher than 50, spin up a new server"""
+		if avg_load(self) > 0.5:
+			print ("xxx")
+		pass
+
+	def __str__(self):
+		"""Returns a string with the load for each server."""
+		loads = [str(server) for server in self.servers]
+		return "[{}]".format(",".join(loads))
+#End Portion 2#
+
+
+# Alright, we now have a basic implementation of the server class. Let's look at the basic LoadBalancing class. 
+# This class will start with only one server available. When a connection gets added, it will randomly select a
+#  server to serve that connection, and then pass on the connection to the server.
+#  The LoadBalancing class also needs to keep track of the ongoing connections to be able to close them. This is the basic structure:
+#Begin Portion 2#
+class LoadBalancing:
+    def __init__(self):
+        """Initialize the load balancing system with one server"""
+        self.connections = {}
+        self.servers = [Server()]
+
+    def add_connection(self, connection_id):
+        """Randomly selects a server and adds a connection to it."""
+        server = random.choice(self.servers)
+        # Add the connection to the dictionary with the selected server
+        # Add the connection to the server
+        self.connections[connection_id] = server
+        server.add_connection(connection_id)
+        self.ensure_availability()
+
+    def close_connection(self, connection_id):
+        """Closes the connection on the the server corresponding to connection_id."""
+        # Find out the right server
+        # Close the connection on the server
+        # Remove the connection from the load balancer
+        self.connections[connection_id].close_connection(connection_id)
+        del self.connections[connection_id]
+
+    def avg_load(self):
+        """Calculates the average load of all servers"""
+        # Sum the load of each server and divide by the amount of servers
+        total = 0
+        for loads in self.servers:
+            total += loads.load()
+        return total/len(self.servers)
+
+    def ensure_availability(self):
+        """If the average load is higher than 50, spin up a new server"""
+        if self.avg_load() > 50.00:
+            self.servers.append(Server())
+
+    def __str__(self):
+        """Returns a string with the load for each server."""
+        loads = [str(server) for server in self.servers]
+        return "[{}]".format(",".join(loads))
+#End Portion 2#
+
+#Begin Portion 1#
+import random
+
+class Server:
+    def __init__(self):
+        """Creates a new server instance, with no active connections."""
+        self.connections = {}
+
+    def add_connection(self, connection_id):
+        """Adds a new connection to this server."""
+        connection_load = random.random()*10+1
+        self.connections[connection_id] = connection_load
+        # Add the connection to the dictionary with the calculated load
+
+    def close_connection(self, connection_id):
+        """Closes a connection on this server."""
+        # Remove the connection from the dictionary
+        del self.connections[connection_id]
+
+    def load(self):
+        """Calculates the current load for all connections."""
+        total = 0
+        # Add up the load for each of the connections
+        for load in self.connections.values():
+            total += load
+        return total
+
+    def __str__(self):
+        """Returns a string with the current load of the server"""
+        return "{:.2f}%".format(self.load())
+    
+# CONGRATULATIONS. Advanced python coming sooon
