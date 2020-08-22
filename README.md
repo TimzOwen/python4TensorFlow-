@@ -8,7 +8,7 @@ run big models in **machine Learning** and **AI**
 
 ## Check out some Cheat Sheet over here
 
-[Checkout more about String formatting from](https://docs.python.org/3/library/stdtypes.html#string-methods")
+[Checkout more about String formatting from](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
 ## Let's get familiar with some formating techniques
 
@@ -39,17 +39,17 @@ Special methods have specific names, like __init__ for the constructor or __str_
 
 ### more on Dictionaries 
 
-[Checkout more on dicttionaries ("https://docs.python.org/3/library/stdtypes.html#mapping-types-dict ")
+[Checkout more on dicttionaries ](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
 
 
 ### Learn more about running python in jupyter here:
 
-[Checkout more on Jupyter ("https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook ")
+[Checkout more on Jupyter ](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook )
 
 
 ### Understanding modules in python
 
-[Checkout more on Jupyter ("https://pypi.org/")
+[Checkout more on Jupyter] (https://pypi.org/)
 
 In the modelues quizes, you get to simulate a real servre configuraitons. 
 
