@@ -24,7 +24,7 @@ run big models in **machine Learning** and **AI**
 
 more on formating 
 
-[Checkout more on formatting (https://docs.python.org/3/library/string.html#format-specification-mini-language")
+[Checkout more on formatting ](https://docs.python.org/3/library/string.html#format-specification-mini-language)
 
 Classes define the behavior of all instances of a specific class.
 Each variable of a specific class is an instance or object.
@@ -49,7 +49,7 @@ Special methods have specific names, like __init__ for the constructor or __str_
 
 ### Understanding modules in python
 
-[Checkout more on Jupyter] (https://pypi.org/)
+[Checkout more on Jupyter](https://pypi.org/)
 
 In the modelues quizes, you get to simulate a real servre configuraitons. 
 
