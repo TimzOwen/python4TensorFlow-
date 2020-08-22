@@ -719,3 +719,139 @@ class Shirt(Clothing):
 polo = Shirt("Polo")
 print(polo.checkmaterial())
 
+
+
+
+#summary
+
+#In object-oriented programming, the concept of inheritance allows you to build relationships between objects,
+# grouping together similar concepts and reducing code duplication. Let's create a custom Fruit class with color and flavor attributes:
+>>> class Fruit:
+...     def __init__(self, color, flavor):
+...         self.color = color
+...         self.flavor = flavor
+
+
+#We defined a Fruit class with a constructor for color and flavor attributes. Next, we'll define an Apple class along with a new Grape 
+# class, both of which we want to inherit properties and behaviors from the Fruit class:
+>>> class Apple(Fruit):
+...     pass
+... 
+>>> class Grape(Fruit):
+...     pass
+
+# In Python, we use parentheses in the class declaration to have the class inherit from the Fruit class. So in this example,
+#  we’re instructing our computer that both the Apple class and Grape class inherit from the Fruit class. This means that they
+#  both have the same constructor method which sets the color and flavor attributes. We can now create instances of our Apple 
+# and Grape classes:
+
+>>> granny_smith = Apple("green", "tart")
+>>> carnelian = Grape("purple", "sweet")
+>>> print(granny_smith.flavor)
+tart
+>>> print(carnelian.color)
+purple
+
+
+
+# COMPOSITION:
+#Allows you to use an instances of a class where classes are not related to each other
+class Repository:
+    def __init__(self):
+        self.packages = {}
+    def add_packages(self, package):
+        self.packages[package.name]=package
+    def total_size(self):
+        result = 0
+        for package in self.packages.value():
+            result += package.size
+        return result
+
+
+# 9
+
+# Let’s expand a bit on our Clothing classes from the previous in-video question. Your mission: Finish the
+# "Stock_by_Material" method and iterate over the amount of each item of a given material that is in stock.
+#  When you’re finished, the script should add up to 10 cotton Polo shirts.
+class Clothing:
+      stock={ 'name': [],'material' :[], 'amount':[]}
+  def __init__(self,name):
+    material = ""
+    self.name = name
+  def add_item(self, name, material, amount):
+    Clothing.stock['name'].append(self.name)
+    Clothing.stock['material'].append(self.material)
+    Clothing.stock['amount'].append(amount)
+  def Stock_by_Material(self, material):
+    count=0
+    n=0
+    for item in Clothing.stock['___']:
+      if item == material:
+        count += Clothing.___['amount'][n]
+        n+=1
+    return count
+
+class shirt(Clothing):
+  material="Cotton"
+class pants(Clothing):
+  material="Cotton"
+
+polo = shirt("Polo")
+sweatpants = pants("Sweatpants")
+polo.add_item(polo.name, polo.material, 4)
+sweatpants.add_item(sweatpants.name, sweatpants.material, 6)
+current_stock = polo.Stock_by_Material("Cotton")
+print(current_stock)
+
+
+#soln
+class Clothing:
+      stock={ 'name': [],'material' :[], 'amount':[]}
+  def __init__(self,name):
+    material = ""
+    self.name = name
+  def add_item(self, name, material, amount):
+    Clothing.stock['name'].append(self.name)
+    Clothing.stock['material'].append(self.material)
+    Clothing.stock['amount'].append(amount)
+  def Stock_by_Material(self, material):
+    count=0
+    n=0
+    for item in Clothing.stock['material']:
+      if item == material:
+        count += Clothing.stock['amount'][n]
+        n+=1
+    return count
+
+class shirt(Clothing):
+  material="Cotton"
+class pants(Clothing):
+  material="Cotton"
+
+polo = shirt("Polo")
+sweatpants = pants("Sweatpants")
+polo.add_item(polo.name, polo.material, 4)
+sweatpants.add_item(sweatpants.name, sweatpants.material, 6)
+current_stock = polo.Stock_by_Material("Cotton")
+print(current_stock)
+
+
+# You can have a situation where two different classes are related, but there is no inheritance going on.
+#  This is referred to as composition -- where one class makes use of code contained in another class.
+# For example, imagine we have a Package class which represents a software package. It contains attributes
+#  about the software package, like name, version, and size. We also have a Repository class which represents
+# all the packages available for installation. While there’s no inheritance relationship between the two classes,
+# they are related. The Repository class will contain a dictionary or
+#  list of Packages that are contained in the repository. Let's take a look at an example Repository class definition:
+>>> class Repository:
+...      def __init__(self):
+...          self.packages = {}
+...      def add_package(self, package):
+...          self.packages[package.name] = package
+...      def total_size(self):
+...          result = 0
+...          for package in self.packages.values():
+...              result += package.size
+...          return result
+
+
