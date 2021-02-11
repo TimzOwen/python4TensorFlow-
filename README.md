@@ -1,3 +1,5 @@
+##### Code moved to the main read me.
+
 ### Let's Learn some Python
 
 Python is one of the most used programming language in large fields.
