@@ -16,3 +16,8 @@ class Microprocessor:
         self.company_made = company
         self.processor_speed = speed
         self.generation = generation
+class Microchip:
+    def __init_(self,company_name, price):
+        self.company_name = company_name
+        
+        
