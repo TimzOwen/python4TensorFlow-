@@ -1236,3 +1236,11 @@ for x in range(0,101,10):
  80 F |  26.67 C
  90 F |  32.22 C
 100 F |  37.78 C
+
+ 
+ 
+ 
+ 
+ # 73
+ # determine the closest restauranrs and steers given an array of streets before
+ 
